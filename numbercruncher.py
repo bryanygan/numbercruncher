@@ -8,16 +8,24 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 from discord.ext import commands
 from discord import app_commands
 
-load_dotenv()  # reads .env
-TOKEN = os.getenv("DISCORD_BOT_TOKEN")
-if not TOKEN:
-    raise RuntimeError("DISCORD_BOT_TOKEN not set!")
+load_dotenv()
 
-# ─── CONFIG ────────────────────────────────────────────────────────────────────
-# TOKEN                = os.getenv("DISCORD_BOT_TOKEN")  # set this in your env
-ORDER_CHANNEL_ID     = 1352067371006693499               # channel where webhook posts land
-ANALYSIS_CHANNEL_ID  = ORDER_CHANNEL_ID                  # or another channel for results
-# ────────────────────────────────────────────────────────────────────────────────
+DISCORD_BOT_TOKEN    = os.getenv("DISCORD_BOT_TOKEN")
+APPLICATION_ID       = os.getenv("APPLICATION_ID")
+ORDER_CHANNEL_ID     = os.getenv("ORDER_CHANNEL_ID")
+
+# Validate
+if not DISCORD_BOT_TOKEN:
+    raise RuntimeError("DISCORD_BOT_TOKEN not set in .env")
+if not APPLICATION_ID:
+    raise RuntimeError("APPLICATION_ID not set in .env")
+if not ORDER_CHANNEL_ID:
+    raise RuntimeError("ORDER_CHANNEL_ID not set in .env")
+
+# Convert to int
+APPLICATION_ID   = int(APPLICATION_ID)
+ORDER_CHANNEL_ID = int(ORDER_CHANNEL_ID)
+ANALYSIS_CHANNEL_ID = ORDER_CHANNEL_ID
 
 # Enable only the intents we need
 intents = discord.Intents.default()

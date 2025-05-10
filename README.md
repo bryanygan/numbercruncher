@@ -28,16 +28,18 @@ A Discord bot that fetches webhook‑posted orders, analyzes time‑of‑day and
 
 ## Installation
 
-1. Clone the repo  
+1. Clone the repo
+   ```bash
     git clone https://github.com/bryanygan/numbercruncher.git  
-    cd numbercruncher  
+    cd numbercruncher
+   ```
 
-2. Create & activate a virtual environment  
+3. Create & activate a virtual environment  
     python3 -m venv venv  
     source venv/bin/activate      # macOS/Linux  
     .\venv\Scripts\activate       # Windows  
 
-3. Install dependencies  
+4. Install dependencies  
     pip install discord.py pandas matplotlib statsmodels python-dotenv  
 
 ---

@@ -34,25 +34,30 @@ A Discord bot that fetches webhook‑posted orders, analyzes time‑of‑day and
     cd numbercruncher
    ```
 
-3. Create & activate a virtual environment  
+2. Create & activate a virtual environment
+   ```bash
     python3 -m venv venv  
     source venv/bin/activate      # macOS/Linux  
-    .\venv\Scripts\activate       # Windows  
+    .\venv\Scripts\activate       # Windows
+   ```
 
-4. Install dependencies  
+3. Install dependencies
+   ```bash
     pip install discord.py pandas matplotlib statsmodels python-dotenv  
-
+   ```
 ---
 
 ## Configuration
 
 1. Environment variables  
-   Create a `.env` file in the project root with:  
+   Create a `.env` file in the project root with:
+   ```
        DISCORD_BOT_TOKEN=your_bot_token_here       
        APPLICATION_ID=your_application_id_here   # Your Discord application ID
-       ORDER_CHANNEL_ID=your_channel_id_here     # Channel where webhook posts land  
+       ORDER_CHANNEL_ID=your_channel_id_here     # Channel where webhook posts land
+   ```
 
-2. **Script constants**  
+3. **Script constants**  
    At the top of `numbercruncher.py`, adjust as needed:  
     ANALYSIS_CHANNEL_ID  = ORDER_CHANNEL_ID      # Channel for sending results  
 
@@ -60,8 +65,10 @@ A Discord bot that fetches webhook‑posted orders, analyzes time‑of‑day and
 
 ## Usage
 
-1. Run the bot  
+1. Run the bot
+   ```bash
        python numbercruncher.py  
+   ```
 
 2. In Discord  
    - Invite your bot with scopes `applications.commands` & `bot`.  

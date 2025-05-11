@@ -151,4 +151,4 @@ async def analyze(interaction: discord.Interaction):
 
 
 if __name__ == "__main__":
-    bot.run(TOKEN)
+    bot.run(DISCORD_BOT_TOKEN)
